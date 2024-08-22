@@ -2,53 +2,66 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-color: #f4f4f9;
+    color: #333;
 }
 
 .hero {
     width: 100%;
     height: 100vh;
-    background: linear-gradient(45deg, #010758, #490d61);
+    background: linear-gradient(135deg, #e0eafc, #cfdef3);
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    color: #fff;
+    padding: 20px;
+    text-align: center;
 }
 
 .hero h1 {
-    color: #fff;
-    font-weight: 500;
-    font-size: 3rem;
+    color: #333;
+    font-weight: 600;
+    font-size: 2.5rem;
     margin-bottom: 20px;
-
+    transition: color 0.3s ease;
 }
 
 .hero h1 span {
-    color: #ff2936;
+    color: #ff6b6b;
 }
 
 textarea {
-    width: 600px;
+    width: 100%;
+    max-width: 600px;
     height: 250px;
-    background: #403d84;
-    color: #fff;
-    font-size: 15px;
-    border: 0;
+    background: #fff;
+    color: #333;
+    font-size: 16px;
+    border: 1px solid #ddd;
     padding: 20px;
-    outline: 0;
-
+    outline: none;
     border-radius: 10px;
     resize: none;
     margin-bottom: 30px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: border-color 0.3s ease;
+}
+
+textarea:focus {
+    border-color: #ff6b6b;
 }
 
 textarea::placeholder {
-    color: #ddd;
-    font-size: 15px;
+    color: #aaa;
 }
 
 .row {
-    width: 600px;
+    width: 100%;
+    max-width: 600px;
     display: flex;
     gap: 20px;
     align-items: center;
@@ -56,39 +69,105 @@ textarea::placeholder {
 }
 
 button {
-    padding: 10px 20px;
-    background: #ff2936;
+    padding: 12px 24px;
+    background: #ff6b6b;
     color: #fff;
-    border: 0;
+    border: none;
     border-radius: 10px;
     cursor: pointer;
-    font-size: 15px;
-    font-weight: 500;
-    transition: 0.3s;
+    font-size: 16px;
+    font-weight: 600;
     display: flex;
-    margin-left: auto;
+    align-items: center;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background: #ff3b3b;
 }
 
 button img {
     width: 20px;
     height: 20px;
-    margin-right: 10px;
+    margin-right: 8px;
 }
 
 select {
-
     flex: 1;
-    color: #fff;
-    background: #403d84;
+    color: #333;
+    background: #fff;
     height: 50px;
     padding: 0 20px;
-    outline: 0;
-    border: 0;
-    border-radius: 35px;
+    outline: none;
+    border: 1px solid #ddd;
+    border-radius: 10px;
     appearance: none;
-    background-image:url("/Assets/dropdown.png");
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-image: url("/Assets/dropdown.png");
     background-repeat: no-repeat;
     background-size: 15px;
-    background-position-x :calc(100% - 20px);
-    background-position-y: 20px;
+    background-position-x: calc(100% - 20px);
+    background-position-y: 50%;
+    transition: border-color 0.3s ease;
+}
+
+select:focus {
+    border-color: #ff6b6b;
+}
+
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 2rem;
+    }
+
+    textarea {
+        width: 100%;
+        height: 200px;
+        font-size: 14px;
+    }
+
+    .row {
+        width: 100%;
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    select {
+        width: 100%;
+        border-radius: 8px;
+    }
+
+    button {
+        width: 100%;
+        justify-content: center;
+        border-radius: 8px;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero h1 {
+        font-size: 1.5rem;
+    }
+
+    textarea {
+        height: 150px;
+        padding: 15px;
+    }
+
+    .row {
+        gap: 10px;
+    }
+
+    button {
+        padding: 10px 20px;
+        font-size: 14px;
+    }
+
+    select {
+        height: 45px;
+        padding: 0 15px;
+        background-position-x: calc(100% - 15px);
+    }
 }
