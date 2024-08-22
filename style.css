@@ -103,7 +103,7 @@ select {
     border-radius: 10px;
     appearance: none;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    background-image: url("/Assets/dropdown.png");
+    background-image: url("./Assets/dropdown.png");
     background-repeat: no-repeat;
     background-size: 15px;
     background-position-x: calc(100% - 20px);
